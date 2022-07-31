@@ -1,0 +1,28 @@
+@{
+  Layout = "_Layout";
+}
+
+<div class="container">
+  <h1 class="title"><strong>EAU CLAIRE'S SALON</strong></h1>
+  <h2><strong>Stylists List</h1></strong></h2>
+  <h4>* Click on stylist to see details *</h4>
+  
+  <div class="infoBox">
+    @using HairSalon.Models;
+    
+    @if (@Model.Count == 0)
+    {
+      <h4><strong>Stylist List is EMPTY!<strong></h4>
+    } 
+
+    <ul>
+      @foreach(Stylist stylist in Model)
+      {
+        <li><h3>@Html.ActionLink($"{stylist.Name}", "Details", new { id = stylist.StylistId })</h3></li>
+      }
+  </ul>
+  </div>
+
+  <h4 id="leftSidetLink">@Html.ActionLink("Add Stylist", "Create")</h4>
+  <h4 id="rightSideLink">@Html.ActionLink("Return Home", "Index", "Home")</h4>
+</div>

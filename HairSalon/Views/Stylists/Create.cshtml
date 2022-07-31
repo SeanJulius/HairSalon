@@ -1,0 +1,28 @@
+@{
+  Layout = "_Layout";
+}
+
+<div class="container">
+  <h1 class="title"><strong>EAU CLAIRE'S SALON</strong></h1>
+  <h2>Add Stylist</h2>
+  
+  <div class="infoBox">
+    @model HairSalon.Models.Stylist
+    
+    @using (Html.BeginForm())
+    {
+      <p>@Html.Label("Name:") 
+      <input id="stylistName" name="Name" type="text" required></p>
+
+      <p>@Html.LabelFor(model => model.Specialty): 
+      @Html.TextBoxFor(model => model.Specialty)</p>
+
+      <p>@Html.Label("Hired Date:") 
+      <input id="hieredDate" name="DateHired" type="date" required></p>
+
+      <input type="submit" value="Add Stylist" id="btn2" />
+    }
+  </div>
+    <h4 id="leftSidetLink">@Html.ActionLink("Show All Stylists", "Index")</h4>
+    <h4 id="rightSideLink">@Html.ActionLink("Return Home", "Index", "Home")</h4>
+</div>

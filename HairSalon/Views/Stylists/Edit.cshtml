@@ -1,0 +1,29 @@
+@{
+  Layout = "_Layout";
+}
+
+<div class="container">
+  <h1 class="title"><strong>EAU CLAIRE'S SALON</strong></h1>
+  <h2><strong>Edit Stylist</strong></h2>
+
+  <div class="infoBox">
+    @model HairSalon.Models.Stylist
+    @using (Html.BeginForm())
+    {
+      @Html.HiddenFor(model => model.StylistId)
+
+      <p> @Html.LabelFor(model => model.Name)
+      @Html.EditorFor(model => model.Name)</p>
+
+      <p>@Html.LabelFor(model => model.Specialty)  
+      @Html.EditorFor(model => model.Specialty)</p>
+
+      <p>@Html.LabelFor(model => model.DateHired) 
+      @Html.EditorFor(model => model.DateHired)</p>
+
+      <input type="submit" value="Save" id="btn" >
+    }
+
+    <h4 id="sideLink">@Html.ActionLink("Cancel", "Index")</h4>
+  </div>
+</div>

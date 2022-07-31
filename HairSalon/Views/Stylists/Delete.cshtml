@@ -1,0 +1,24 @@
+@{
+  Layout = "_Layout";
+}
+
+<div class="container">
+  <h1 class="title"><strong>EAU CLAIRE'S SALON</strong></h1>
+  <h2><strong>Delete Stylist</strong></h2>
+
+  <div class="infoBox">
+    @model HairSalon.Models.Stylist
+
+    <h4>Are you sure you want to <strong>DELETE</strong> this stylist?</h4>
+
+    <h5><strong>Stylist @Html.DisplayNameFor(model => model.Name): @Html.DisplayFor(model => model.Name)</strong></h5>
+  </div>
+
+  @using (Html.BeginForm())
+  {
+    <input type="submit" value="Delete" id="btn3" />
+  }
+  
+  <h4 id="deleteLink">@Html.ActionLink("Cancel", "Index")</h4>
+  
+</div>
