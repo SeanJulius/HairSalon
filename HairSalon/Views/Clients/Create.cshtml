@@ -1,0 +1,27 @@
+@{
+  Layout = "_Layout";
+}
+
+<div class="container">
+  <h1 class="title"><strong>EAU CLAIRE'S SALON</strong></h1>
+  <h2><strong>Add New Client</strong></h2> 
+
+  <div class="infoBox">
+    @model HairSalon.Models.Client
+    
+    @using (Html.BeginForm())
+    {
+      <input type="hidden" id="StylistId" name="StylistId" value="@ViewBag.StylistId"/>
+
+      <p>@Html.Label("Name:") 
+      <input id="clientName" name="Name" type="text" required></p>
+      
+      <p>@Html.LabelFor(model => model.PhoneNumber)
+      @Html.TextBoxFor(model => model.PhoneNumber)</p>
+
+      <input type="submit" value="Add" id="btn2" />
+    }
+
+    <h4 id="sideLink2">@Html.ActionLink("Cancel", "Index", "Stylists" )</h4>
+  </div>
+</div> 
