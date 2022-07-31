@@ -15,7 +15,7 @@ Technologies Used
 
 ## Description:
 
-This program allows a user to create vendors then click on that vendor and enter orders that run inline with the vendor.
+This program allows a user to see a list of all Stylists, add stylists, hire dates, and add new clients to a specific list.
 
 ## Application Setup Instructions
 
@@ -30,9 +30,19 @@ This program allows a user to create vendors then click on that vendor and enter
   * _Reopen Navigator then Schemas tab then right click then refresh all._
 * _Navigate to the "HairSalon" ._
 * _Open in Vs code: code ._
+* _Open Terminal in Vs Code._
+* _Go to HairSalon Directory._
+* _Create folder: $ cd "appsettings.json"_
+* _Add Following code to "appsettings.json"_
+{
+  "ConnectionStrings": {
+      "DefaultConnection": "Server=localhost;Port=3306;database=sean_julius;uid=root;pwd=[YOUR-PASSWORD];"
+  }
+}
 * _Run: dotnet restore_
-* _Navigate to "HairSalon"_
-* _In this directory type "dotnet run" to run the program._
+* _Run: dotnet build_
+* _Run: dotnet run_
+* _Open web Browser: http://localhost:5000/_
 
 ## Known Bugs
 
